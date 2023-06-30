@@ -1,9 +1,10 @@
 # Use the official Python base image
 FROM python:3.9-slim
 
-# create user
-RUN useradd -d /home/giga -m -s /bin/bash giga
-USER giga
+# Create a new user with UID 10016
+RUN addgroup -g 10016 choreo && \
+    adduser  --disabled-password  --no-create-home --uid 10016 --ingroup choreo choreouser
+USER 10016
 
 # Set the working directory in the container
 WORKDIR /app
