@@ -1,6 +1,10 @@
 # Use the official Python base image
 FROM python:3.9-slim
 
+# create user
+RUN useradd -d /home/giga -m -s /bin/bash giga
+USER giga
+
 # Set the working directory in the container
 WORKDIR /app
 
