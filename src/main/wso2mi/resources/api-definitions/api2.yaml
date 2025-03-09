@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: api2
+  description: API Definition of api2
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/api2
+paths:
+  /:
+    get:
+      responses:
+        default:
+          description: Default response
